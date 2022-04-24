@@ -8,7 +8,7 @@ namespace BirthdayCardGenerator.Models
         public string? From { get; set; }
         [Required(ErrorMessage="Please enter a name for recipient.")]
         public string? To { get; set; }
-        [Required(ErrorMessage="Please enter you happy birthday message.")]
+        [Required(ErrorMessage="Please enter your happy birthday message.")]
         public string? Message { get; set; }
 
     }
