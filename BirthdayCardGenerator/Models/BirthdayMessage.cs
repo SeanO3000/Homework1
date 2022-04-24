@@ -1,11 +1,15 @@
-﻿namespace BirthdayCardGenerator.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BirthdayCardGenerator.Models
 {
     public class BirthdayMessage
     {
-
-        public string? sender { get; set; }
-        public string? recipient { get; set; }
-        public string? message { get; set; }
+        [Required(ErrorMessage="Please enter a name for sender.")]
+        public string? From { get; set; }
+        [Required(ErrorMessage="Please enter a name for recipient.")]
+        public string? To { get; set; }
+        [Required(ErrorMessage="Please enter you happy birthday message.")]
+        public string? Message { get; set; }
 
     }
 }

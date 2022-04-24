@@ -29,6 +29,24 @@ namespace BirthdayCardGenerator.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
+        [HttpGet]
+        public IActionResult CardForm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CardForm(Models.BirthdayMessage birthdayMessage)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("CardSent", birthdayMessage);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }
